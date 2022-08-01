@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
   require 'faraday'
   require 'faraday/net_http'
-  LINK = 'https://api.github.com/users/'.freeze
+  LINK = 'https://api.github.com/users/'
 
   def search
     @user_name = params[:name]
