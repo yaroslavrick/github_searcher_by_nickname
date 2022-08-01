@@ -1,0 +1,11 @@
+<div>
+    <%= @github_name %>
+</div>
+
+<div>
+    <ul>
+        <% @github_repos.each do |repo| %>
+            <li><%= repo %></li>
+        <% end %>
+    </ul>
+</div>
