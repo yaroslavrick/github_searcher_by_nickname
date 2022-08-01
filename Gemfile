@@ -12,6 +12,8 @@ gem 'sprockets-rails'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 
+gem 'pg'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -81,5 +83,5 @@ end
 group :production do
   # Heroku uses the PostgreSQL database we need to add
   # the pg gem in the production environment to allow Rails to talk to Postgres:
-  gem 'pg'
+  # gem 'pg'
 end
