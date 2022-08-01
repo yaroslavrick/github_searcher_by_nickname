@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Task
 
-Things you may want to cover:
+The main task is to make a form in Rails that search in github by username.
+The result must be "full name" and list of user's repos.
 
-* Ruby version
+### Example:
 
-* System dependencies
+    user: dhh
 
-* Configuration
+Result:
 
-* Database creation
+    David Heinemeier Hansson
+    - asset-hosting-with-minimum-ssl
+    - conductor
+    - textmate-rails-bundle
 
-* Database initialization
+## Done:
 
-* How to run the test suite
+- Searching by username in github.com, Task was to parse with GraphQL, but I make it with gem 'faraday'...
 
-* Services (job queues, cache servers, search engines, etc.)
+  Display search results:
 
-* Deployment instructions
+* Name of author
+* List of repositories
 
-* ...
+- Use GitHub flow (https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/github-flow#following-the-github-flow)
+
+## Todo:
+
+- Learn GraphQL and make a task with it (https://github.com/rmosolgo/graphql-ruby)
+- RSpec-rails tests (https://github.com/rspec/rspec-rails)
+- Learn vcr and make a task with it (https://github.com/vcr/vcr)
+- Add linter jslint_on_rails (https://github.com/mackuba/jslint_on_rails)
+- Add linter rubocop (https://github.com/rubocop/rubocop)
+
+- Deploy app to heroku
