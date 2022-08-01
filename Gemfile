@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -13,7 +15,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 # gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# Faraday is an HTTP client library abstraction layer that provides a common interface over many adapters (such as Net::HTTP)
+# Faraday is an HTTP client library abstraction layer that provides a common interface over many adapters
 gem 'faraday'
 
 group :development, :test do
