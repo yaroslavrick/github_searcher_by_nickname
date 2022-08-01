@@ -59,7 +59,7 @@ group :development, :test do
 
   # preventing the sqlite3 gem from being included in a production environment,
   # since the SQLite database isn’t supported at Heroku:
-  gem 'sqlite3', '1.4.2'
+  gem 'sqlite3', '~> 1.4.4'
 end
 
 group :development do
@@ -71,6 +71,11 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Rubocop Linter:
+  gem 'rubocop', '~> 1.32', require: false
+  gem 'rubocop-performance', '~> 1.14', require: false
+  gem 'rubocop-rails', '~> 2.15', require: false
 end
 
 group :test do
