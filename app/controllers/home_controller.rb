@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   require 'faraday/net_http'
   LINK = 'https://api.github.com/users/'
 
+  def index; end
+
   def search
     @user_name = params[:name]
     github_user_name
