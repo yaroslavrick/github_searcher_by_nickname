@@ -21,7 +21,7 @@ class HomeController < ApplicationController
 
   def github_user_repos
     response_get_repos = Faraday.get("#{LINK}#{@user_name}/repos")
-    @github_repos = JSON.parse(response_get_repos.body).map { |repo| repo['name'] }
+    @github_repos = JSON.parse(response_get_repos.body).pluck('name')
     @github_repos
   end
 end
