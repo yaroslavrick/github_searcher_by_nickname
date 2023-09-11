@@ -1,29 +1,27 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  require 'faraday'
-  require 'faraday/net_http'
-  LINK = 'https://api.github.com/users/'
+  def index
+    return unless request.get? && search_params[:name].present?
 
-  def index; end
+    result = Home::Index::Organizer.call(name: search_params[:name])
 
-  def search
-    @user_name = params[:name]
-    github_user_name
-    github_user_repos
+    if result.success?
+      @github_name = result.github_user_name
+      @github_repos = result.github_user_repos
+    else
+      handle_error(result, :search)
+    end
   end
 
   private
 
-  def github_user_name
-    response_get_name = Faraday.get("#{LINK}#{@user_name}")
-    @github_name = JSON.parse(response_get_name.body)['name']
-    @github_name
+  def search_params
+    params.permit(:name)
   end
 
-  def github_user_repos
-    response_get_repos = Faraday.get("#{LINK}#{@user_name}/repos")
-    @github_repos = JSON.parse(response_get_repos.body).pluck('name')
-    @github_repos
+  def handle_error(result, action)
+    flash.now[:alert] = result.errors
+    render action, status: result.semantic_status || 400
   end
 end

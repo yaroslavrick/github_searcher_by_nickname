@@ -2,3 +2,16 @@ en:
   hello: "Hello world"
   rails_environment:
     production_mode: "The Rails environment is running in production mode!"
+  errors:
+    search:
+      network_error: "Network Error: %{message}"
+      json_parsing_error: "JSON Parsing Error: %{message}"
+      user_not_found: "User not found"
+  home:
+    index:
+      title: 'Search GitHub Repositories'
+      subtitle: "To find repositories' list of an author, type in the nickname:"
+      search_for_label: 'Search for:'
+      search_placeholder: 'Enter user login'
+      search_button: 'Search'
+      repositories_title: 'Repositories of %{github_name}:'
