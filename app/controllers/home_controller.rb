@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  def index; end
+  def index
+    return unless request.get? && search_params[:name].present?
 
-  def search
-    result = Home::Search::Organizer.call(name: search_params[:name])
+    result = Home::Index::Organizer.call(name: search_params[:name])
 
     if result.success?
       @github_name = result.github_user_name

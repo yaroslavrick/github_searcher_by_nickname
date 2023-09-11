@@ -1,7 +1,16 @@
-%div
-  %p To find repositories's list of author, type in nickname:
-  = form_with url: "/search", method: :get do |form|
-    = form.label :query, "Search for:"
-    = form.text_field :name, placeholder: "enter user login"
-    = form.submit "Search"
-  %div
+.container
+  .row
+    .col-md-8.offset-md-2
+      %h1.text-center= t('home.index.title')
+      %p.text-center= t('home.index.subtitle')
+      = form_with url: "/home", method: :get, class: 'form-inline justify-content-center mb-3' do |form|
+        .form-group.mb-2.mr-3
+          = form.label :query, t('home.index.search_for_label'), class: 'sr-only'
+          = form.text_field :name, placeholder: t('home.index.search_placeholder'), class: 'form-control'
+        = form.submit t('home.index.search_button'), class: 'btn btn-primary mb-2'
+
+      - if @github_name
+        %h2= t('home.index.repositories_title', github_name: @github_name)
+        %ul.list-group
+          - @github_repos.each do |repo|
+            %li.list-group-item= repo
