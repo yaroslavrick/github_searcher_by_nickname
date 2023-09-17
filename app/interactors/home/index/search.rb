@@ -9,9 +9,8 @@ module Home
       GH_TOKEN = ENV.fetch('GH_TOKEN', nil) || Rails.application.credentials.dig(:github, :token)
 
       def call
-        context.github_user_name = github_user_name
-        context.github_user_repos = github_user_repos
-        context.semantic_status = 200
+        check_gh_token_presence!
+        perform_search
       rescue Faraday::Error => e
         handle_error(I18n.t('errors.search.network_error', message: e.message))
       rescue JSON::ParserError => e
@@ -19,6 +18,16 @@ module Home
       end
 
       private
+
+      def perform_search
+        context.user_name = github_user_name
+        context.user_repos = github_user_repos
+        context.semantic_status = 200
+      end
+
+      def check_gh_token_presence!
+        context.fail!(errors: I18n.t('errors.search.gh_token_not_found'), semantic_status: 422) if GH_TOKEN.blank?
+      end
 
       def github_user_name
         response_get_name = get_request("#{LINK}#{context.name}")

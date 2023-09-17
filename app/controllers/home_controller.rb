@@ -7,10 +7,10 @@ class HomeController < ApplicationController
     result = Home::Index::Organizer.call(name: search_params[:name])
 
     if result.success?
-      @github_name = result.github_user_name
-      @github_repos = result.github_user_repos
+      @github_name = result.user_name
+      @github_repos = result.user_repos
     else
-      handle_error(result, :search)
+      handle_error(result)
     end
   end
 
@@ -20,8 +20,8 @@ class HomeController < ApplicationController
     params.permit(:name)
   end
 
-  def handle_error(result, action)
+  def handle_error(result)
     flash.now[:alert] = result.errors
-    render action, status: result.semantic_status || 400
+    render :index, status: result.semantic_status || 400
   end
 end
