@@ -1,11 +1,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV["POSTGRES_HOST"] %>
-  port: <%= ENV["POSTGRES_PORT"] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV["POSTGRES_HOST"] || Rails.application.credentials.dig(:db, :host) %>
+  port: <%= ENV["POSTGRES_PORT"] || Rails.application.credentials.dig(:db, :port) %>
+  pool: <%= ENV["RAILS_MAX_THREADS"] || Rails.application.credentials.dig(:db, :max_treads) || 5 %>
+  username: <%= ENV["POSTGRES_USERNAME"] || ENV['DB_USERNAME'] || Rails.application.credentials.dig(:db, :username) %>
+  password: <%= ENV["POSTGRES_PASSWORD"] || ENV['DB_PASSWORD'] || Rails.application.credentials.dig(:db, :password) %>
 
 development:
   <<: *default

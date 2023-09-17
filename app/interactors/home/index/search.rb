@@ -6,7 +6,7 @@ module Home
       require 'faraday'
       require 'faraday/net_http'
       LINK = 'https://api.github.com/users/'
-      GH_TOKEN = ENV.fetch('GH_TOKEN', nil)
+      GH_TOKEN = ENV.fetch('GH_TOKEN', nil) || Rails.application.credentials.dig(:github, :token)
 
       def call
         context.github_user_name = github_user_name

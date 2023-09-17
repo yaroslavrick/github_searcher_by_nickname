@@ -1,5 +1,8 @@
 # README
 
+## Screenshot of the app:
+![screenshot_of_app.png](screenshot_of_app.png)
+
 ## Task
 
 The main task is to make a form in Rails that search in github by username.
