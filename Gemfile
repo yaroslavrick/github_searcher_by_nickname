@@ -50,6 +50,5 @@ end
 group :test do
   gem 'rspec-rails', '~> 6.0.2'
   gem 'shoulda-matchers', '~> 5.3.0'
-  gem "vcr", "~> 6.2"
-  gem "webmock", "~> 3.19"
+  gem 'vcr', '~> 6.2'
 end
