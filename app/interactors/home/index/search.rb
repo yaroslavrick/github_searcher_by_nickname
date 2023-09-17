@@ -26,7 +26,9 @@ module Home
       end
 
       def check_gh_token_presence!
-        context.fail!(errors: I18n.t('errors.search.gh_token_not_found'), semantic_status: 422) if GH_TOKEN.blank?
+        return if GH_TOKEN.present?
+
+        handle_error(I18n.t('errors.search.gh_token_not_found'))
       end
 
       def github_user_name
