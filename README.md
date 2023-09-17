@@ -112,6 +112,12 @@ To start the app, run the following command:
 bin/dev
 ```
 
+or:
+
+```bash
+bundle exec rails server
+```
+
 Once the server is running, open your web browser and go to <http://localhost:3000> to access the app.
 
 ## Testing
