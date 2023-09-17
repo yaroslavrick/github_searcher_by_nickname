@@ -5,6 +5,8 @@
 
 ## Link to deployed app:
 
+https://githubsearcherbynickname-production.up.railway.app/
+
 ## Requirements
 
 Make sure you have the following installed on your system:

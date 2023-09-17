@@ -27,6 +27,9 @@
 
 /public/assets
 
+# Ignore keys for decrypting environment credentials.
+/config/credentials/*.key
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
