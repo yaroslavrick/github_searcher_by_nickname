@@ -3,7 +3,7 @@
     .col-md-8.offset-md-2
       %h1.text-center= t('home.index.title')
       %p.text-center= t('home.index.subtitle')
-      = form_with url: "/home", method: :get, class: 'form-inline justify-content-center mb-3' do |form|
+      = form_with url: home_index_path(locale: I18n.locale), method: :get, class: 'form-inline justify-content-center mb-3' do |form|
         .form-group.mb-2.mr-3
           = form.label :query, t('home.index.search_for_label'), class: 'sr-only'
           = form.text_field :name, placeholder: t('home.index.search_placeholder'), class: 'form-control', value: params[:name]

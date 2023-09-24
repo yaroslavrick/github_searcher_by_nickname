@@ -1,0 +1,16 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.footer-item {
+  margin-right: 5px;
+  align-self: flex-start;
+}
+
+.footer-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}

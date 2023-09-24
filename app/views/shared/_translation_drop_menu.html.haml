@@ -1,0 +1,17 @@
+%li.nav-item.dropdown
+  = link_to '#', class: 'nav-link dropdown-toggle',
+    data: {"bs-toggle": 'dropdown'} do
+    %img{ src: image_path("flags/#{flag_code(I18n.locale)}.png"), width: '20', height: '20', alt: "#{t(I18n.locale)} #{I18n.t('.flag')}" }
+    = t I18n.locale
+  %ul.dropdown-menu
+    - I18n.available_locales.each do |locale|
+      %li.text-white
+        - if I18n.locale == locale
+          = tag.span class: 'dropdown-item' do
+            %img{ src: image_path("flags/#{flag_code(locale)}.png"), width: '20', height: '20', alt: "#{t(locale)} #{I18n.t('.flag')}" }
+            = t(locale)
+        - else
+          = link_to url_for(locale: locale),
+            class: 'dropdown-item' do
+            %img{ src: image_path("flags/#{flag_code(locale)}.png"), width: '20', height: '20', alt: "#{t(locale)} #{I18n.t('.flag')}" }
+            = t(locale)

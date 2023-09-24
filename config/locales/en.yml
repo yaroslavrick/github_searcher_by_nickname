@@ -1,5 +1,6 @@
 en:
-  hello: "Hello world"
+  uk: "Українська"
+  en: "English"
   rails_environment:
     production_mode: "The Rails environment is running in production mode!"
   errors:
@@ -8,6 +9,7 @@ en:
       json_parsing_error: "JSON Parsing Error: %{message}"
       user_not_found: "User not found"
       gh_token_not_found: "GitHub token is not given"
+      invalid_uri_error: "Invalid input: nickname can not have spaces"
   home:
     index:
       title: 'Search GitHub Repositories'
@@ -16,3 +18,7 @@ en:
       search_placeholder: 'Enter user login'
       search_button: 'Search'
       repositories_title: 'Repositories of %{github_name}:'
+  shared:
+    header:
+      title: "Github Repositories Search"
+  flag: "Flag"
