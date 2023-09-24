@@ -1,5 +1,6 @@
 %footer.navbar.navbar-dark.bg-dark
-  .container
-    %span.text-white Copyright © #{Time.now.year} Yaroslav Yenkala. All rights reserved.
-    %a.text-white.ml-3{href: "https://github.com/yaroslavrick", target: "_blank", rel: "noopener"}
-      %img.footer-image{src: image_path("logos/github-mark/github-mark-white.svg"), alt: "GitHub Logo"}
+  .container.justify-content-center
+    .d-flex.justify-content-center.footer-container
+      %span.text-white.footer-item Copyright © #{Time.now.year} Yaroslav Yenkala. All rights reserved.
+      %a.text-white.footer-item{href: "https://github.com/yaroslavrick", target: "_blank", rel: "noopener"}
+        %img.footer-image{src: image_path("logos/github-mark/github-mark-white.svg"), alt: "GitHub Logo"}

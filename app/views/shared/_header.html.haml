@@ -5,7 +5,10 @@
       %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
-        %ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          %li.nav-item.dropdown
-            %ul.dropdown-menu
-          = render partial: 'shared/translation_drop_menu'
+        .d-flex.w-100
+          %ul.navbar-nav.ml-auto.mb-2.mb-lg-0.d-lg-none
+            %li.nav-item.dropdown
+              = render partial: 'shared/translation_drop_menu'
+          %ul.navbar-nav.ml-auto.mb-2.mb-lg-0.d-none.d-lg-flex
+            %li.nav-item.dropdown
+              = render partial: 'shared/translation_drop_menu'
