@@ -6,7 +6,7 @@
       = form_with url: "/home", method: :get, class: 'form-inline justify-content-center mb-3' do |form|
         .form-group.mb-2.mr-3
           = form.label :query, t('home.index.search_for_label'), class: 'sr-only'
-          = form.text_field :name, placeholder: t('home.index.search_placeholder'), class: 'form-control'
+          = form.text_field :name, placeholder: t('home.index.search_placeholder'), class: 'form-control', value: params[:name]
         = form.submit t('home.index.search_button'), class: 'btn btn-primary mb-2'
 
       - if @github_name
@@ -14,3 +14,5 @@
         %ul.list-group
           - @github_repos.each do |repo|
             %li.list-group-item= repo
+        .container
+          != pagy_bootstrap_nav @pagy if @pagy && @pagy.pages > 1

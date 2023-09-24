@@ -12,7 +12,7 @@
 # Instance variables
 # See https://ddnexus.github.io/pagy/docs/api/pagy#instance-variables
 # Pagy::DEFAULT[:page]   = 1                                  # default
-Pagy::DEFAULT[:items] = 6 # default
+Pagy::DEFAULT[:items] = 10 # default
 # Pagy::DEFAULT[:outset] = 0                                  # default
 
 # Other Variables
@@ -38,7 +38,7 @@ Pagy::DEFAULT[:items] = 6 # default
 
 # Array extra: Paginate arrays efficiently, avoiding expensive array-wrapping and without overriding
 # See https://ddnexus.github.io/pagy/docs/extras/array
-# require 'pagy/extras/array'
+require 'pagy/extras/array'
 
 # Calendar extra: Add pagination filtering by calendar time unit (year, quarter, month, week, day)
 # See https://ddnexus.github.io/pagy/docs/extras/calendar
@@ -231,7 +231,7 @@ Pagy::DEFAULT[:overflow] = :empty_page # default  (other options: :last_page and
 # I18n extra: uses the standard i18n gem which is ~18x slower using ~10x more memory
 # than the default pagy internal i18n (see above)
 # See https://ddnexus.github.io/pagy/docs/extras/i18n
-# require 'pagy/extras/i18n'
+require 'pagy/extras/i18n'
 
 # Default i18n key
 # Pagy::DEFAULT[:i18n_key] = 'pagy.item_name'   # default
