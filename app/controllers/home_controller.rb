@@ -9,6 +9,7 @@ class HomeController < ApplicationController
     if result.success?
       @github_name = result.user_name
       @github_repos = result.user_repos
+      @pagy, @github_repos = pagy_array(@github_repos)
     else
       handle_error(result)
     end
