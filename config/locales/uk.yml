@@ -1,4 +1,6 @@
 uk:
+  uk: "Українська"
+  en: "English"
   rails_environment:
     production_mode: "Оточення Rails працює в режимі виробництва!"
   errors:
@@ -7,6 +9,7 @@ uk:
       json_parsing_error: "Помилка розбору JSON: %{message}"
       user_not_found: "Користувача не знайдено"
       gh_token_not_found: "Токен GitHub не надано"
+      invalid_uri_error: "Невірний запит: псевдонім не може містити пробілів"
   home:
     index:
       title: 'Пошук репозиторіїв на GitHub'
@@ -18,3 +21,4 @@ uk:
   shared:
     header:
       title: "Пошук репозиторіїв у Github"
+  flag: "Прапор"

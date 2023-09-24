@@ -15,6 +15,8 @@ module Home
         handle_error(I18n.t('errors.search.network_error', message: e.message))
       rescue JSON::ParserError => e
         handle_error(I18n.t('errors.search.json_parsing_error', message: e.message))
+      rescue URI::InvalidURIError => e
+        handle_error(I18n.t('errors.search.invalid_uri_error', message: e.message))
       end
 
       private
