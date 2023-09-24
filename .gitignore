@@ -52,3 +52,4 @@ coverage
 libyaml/*
 
 /config/database.yml
+yarn-error.log

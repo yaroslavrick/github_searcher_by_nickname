@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'home#index'
-  resources :home, only: [:index]
+  scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
+    root 'home#index'
+    resources :home, only: [:index]
+  end
 end
