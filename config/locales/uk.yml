@@ -1,0 +1,20 @@
+uk:
+  rails_environment:
+    production_mode: "Оточення Rails працює в режимі виробництва!"
+  errors:
+    search:
+      network_error: "Помилка мережі: %{message}"
+      json_parsing_error: "Помилка розбору JSON: %{message}"
+      user_not_found: "Користувача не знайдено"
+      gh_token_not_found: "Токен GitHub не надано"
+  home:
+    index:
+      title: 'Пошук репозиторіїв на GitHub'
+      subtitle: "Щоб знайти список репозиторіїв автора, введіть псевдонім:"
+      search_for_label: 'Шукати:'
+      search_placeholder: 'Введіть логін користувача'
+      search_button: 'Пошук'
+      repositories_title: 'Репозиторії %{github_name}:'
+  shared:
+    header:
+      title: "Пошук репозиторіїв у Github"

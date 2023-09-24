@@ -1,5 +1,5 @@
 !!!
-%html
+%html{ :lang => I18n.locale }
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Github Searcher By Nickname
@@ -9,6 +9,9 @@
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   %body
+    %header
+      .container
+        = render 'shared/header'
     .container
       %main
         = render partial: 'shared/flash_message'
