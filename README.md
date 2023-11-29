@@ -135,7 +135,7 @@ Result:
 * List of repositories
 
 - Use GitHub flow (https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/github-flow#following-the-github-flow)
-- Deploy app to heroku (https://yaroslav-yenkala-gitsearcher.herokuapp.com/)
+- Deploy app: ([https://yaroslav-yenkala-gitsearcher.herokuapp.com/](https://githubsearcherbynickname-production.up.railway.app/))
 - Add linter rubocop (https://github.com/rubocop/rubocop)
 - RSpec-rails tests (https://github.com/rspec/rspec-rails)
 - Use vcr for requests to external API in rspec (https://github.com/vcr/vcr)
