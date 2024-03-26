@@ -18,7 +18,7 @@ gem 'jsbundling-rails', '~> 1.2.1'
 gem 'pagy', '~> 6.0.4'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
-gem 'rails', '~> 7.0.7', '>= 7.0.7.2'
+gem 'rails', '~> 7.0.8'
 gem 'sprockets-rails', '~> 3.4.2'
 gem 'strong_migrations', '~> 1.6.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
